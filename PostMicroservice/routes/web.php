@@ -16,3 +16,8 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('post/all/{userId}', "PostController@index");
+$router->post('post', "PostController@store");
+$router->get('post/{post}', "PostController@show");
+$router->post('post/{post}', "PostController@update");
+$router->delete('post/{post}', "PostController@destroy");
