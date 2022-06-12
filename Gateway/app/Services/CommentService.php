@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-use App\Traits\ConsumeExternalService;
+use App\Traits\ConsumeMicroserviceService;
 
 class CommentService
 {
-    use ConsumeExternalService;
+    use ConsumeMicroserviceService;
 
     /**
      * The base uri to consume authors service
@@ -22,18 +22,25 @@ class CommentService
 
     public function __construct()
     {
-        $this->baseUri = config('services.notifications.base_uri');
-        $this->secret = config('services.notifications.secret');
+        $this->baseUri = config('services.comment.base_uri');
+        $this->secret = config('services.comment.secret');
     }
 
 
     
     /**
-     * Requests Notifications Microservice to get all log activities within a specific date range
+     * Requests comment microservice to give all comments posted by a user
      */
-    public function all($request)
+    public function indexUser($request)
     {
-        return $this->performRequest('POST', '/all',$request->all(), $request->headers->all());
+        return $this->performRequest('GET', '/comment/all/user/'.$request->user()->id, $request->all(), $request->headers->all());
+    }
+    /**
+     * Requests comment microservice to give all comments for a post
+     */
+    public function indexPost($request, $postId)
+    {
+        return $this->performRequest('GET', '/comment/all/post/'.$postId, $request->all(), $request->headers->all());
     }
     /**
      * Requests Notifications Microservice to get all Notifications entries for a particular user
@@ -59,9 +66,9 @@ class CommentService
     /**
      * Requests Notifications Microservice to get a particular entry of log identified by id
      */
-    public function show($request, $id)
+    public function show($request, $comment)
     {
-        return $this->performRequest('GET', '/show/'.$request->user()->id."/".$id, $request->all(), $request->headers->all());
+        return $this->performRequest('GET', '/comment/'.$comment, $request->all(), $request->headers->all());
     }
     /**
      * Requests Notifications Microservice to get all Notifications identified by a specific user for a specific type
@@ -72,11 +79,11 @@ class CommentService
     }
     
     /**
-     * Requests Notifications Microservice to store user notification
+     * Requests comment microservice to store a comment
      */
     public function store($request)
     {
-        return $this->performRequest('POST', '/store', array_merge($request->all(), ['user_id' => $request->user()->id]), $request->headers->all());
+        return $this->performRequest('POST', '/comment', array_merge($request->all(), ['user_id' => $request->user()->id]), $request->headers->all());
     }
     /**
      * Requests Notifications Microservice to update status of a notification
@@ -95,9 +102,9 @@ class CommentService
     /**
      * Requests Notifications Microservice to update an entry in Notifications for  a user
      */
-    public function update($request)
+    public function update($request, $comment)
     {
-        return $this->performRequest('PATCH', '/update',$request->all(), $request->headers->all());
+        return $this->performRequest('POST', '/comment/'.$comment ,$request->all(), $request->headers->all());
     }
     /**
      * Requests  Notifications API Microservice to delete a user's activity log
@@ -106,19 +113,6 @@ class CommentService
     {
         return $this->performRequest('DELETE', '/delete/'.$request->user()->id."/".$id,$request->all(), $request->headers->all());
     }
-    /**
-     * Requests  Notifications API Microservice to delete a user's activity log
-     */
-    public function deleteByAdmin($request, $id)
-    {
-        return $this->performRequest('DELETE', '/delete-by-admin/'.$id,$request->all(), $request->headers->all());
-    }
-    /**
-     * Requests Notifications API Microservice to delete all user's activity Notifications
-     */
-    public function deleteAll($request, $userId)
-    {
-        return $this->performRequest('DELETE', '/delete-all/'.$userId,$request->all(), $request->headers->all());
-    }
+    
     
 }

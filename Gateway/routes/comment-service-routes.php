@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\NotificationsServiceController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\CommentServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 | is assigned the api middleware group. Enjoy building your API!
 |
 */
-//API endpoints that require valid token to access
+//API endpoints that require valid token to be accessed
 //or authenticated user
 Route::middleware('auth:api')->prefix('v1/'.config('gateway.comment_prefix'))->group(function(){
 
-    Route::get('comments', [NotificationsServiceController::class,"show"]);
-    Route::get('show-by-type/{type}', [NotificationsServiceController::class,"showByType"]);
-
-    Route::post('store', [NotificationsServiceController::class,"store"]);
-
-    Route::patch('mark-read/{id}',  [NotificationsServiceController::class, "markRead"]);
-
-    Route::delete('delete/{id}', [NotificationsServiceController::class,"delete"]);
+    Route::get('comment/all/user', [CommentServiceController::class, "indexUser"]);
+    Route::get('comment/all/post/{postId}', [CommentServiceController::class, "indexPost"]);
+    Route::post('comment', [CommentServiceController::class, "store"]);
+    Route::get('comment/{comment}', [CommentServiceController::class, "show"]);
+    Route::post('comment/{comment}', [CommentServiceController::class, "update"]);
+    Route::delete('comment/{comment}', [CommentServiceController::class, "destroy"]);
    
 });
 

@@ -13,21 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix(config('roro.prefix'))->group(function(){
-    Route::get('/', function () {
-        return view('welcome');
-    })->middleware('guest');
-    
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
-    Route::get('dashboard/clients', function (Request $request) {
-    
-        return view('clients',[
-            "clients" => $request->user()->clients
-        ]);
-    })->middleware(['auth'])->name('dashboard.clients');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-
-require __DIR__.'/auth.php';
