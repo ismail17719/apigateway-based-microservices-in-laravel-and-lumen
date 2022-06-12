@@ -32,7 +32,7 @@ class AccessTokenController extends PassportAccessTokenController
                 if($validator->fails())
                 {
                     //Return failed validation message
-                    return $this->successResponse($validator->messages()->first(), Response::HTTP_BAD_REQUEST);
+                    return $this->response($validator->messages()->first(), Response::HTTP_BAD_REQUEST);
                 }
                 //get username (default is :email)
                 $username = $request->getParsedBody()['username'];

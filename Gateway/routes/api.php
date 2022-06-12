@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Oauth\AccessTokenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,6 @@ Route::middleware('auth:api')->prefix('v1')->group(function(){
 });
 
 Route::prefix('v1')->group(function(){
-    Route::post('/token', [AccessTokenController::class,'issueToken']);
+    Route::post('token', [AccessTokenController::class,'issueToken']);
 });
 

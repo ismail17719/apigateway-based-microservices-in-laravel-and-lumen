@@ -16,3 +16,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('comment/all/user/{userId}', "CommentController@indexUser");
+$router->get('comment/all/post/{postId}', "CommentController@indexPost");
+$router->post('comment', "CommentController@store");
+$router->get('comment/{comment}', "CommentController@show");
+$router->post('comment/{comment}', "CommentController@update");
+$router->delete('comment/{comment}', "CommentController@destroy");
