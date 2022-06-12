@@ -20,7 +20,7 @@ class CommentService
                 
         $validator = Validator::make($request->all(), [
             "contents" => "required",
-            "Comment_id" => "required",
+            "post_id" => "required",
             "user_id" => "required",
         ]);
         if($validator->fails())

@@ -80,7 +80,7 @@ class CommentController extends Controller
      * @param  Int  $Comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $Comment)
+    public function update(Request $request, $comment)
     {
         //Validate request
         $response = (new CommentService())->validateUpdateRequest($request);
@@ -89,25 +89,25 @@ class CommentController extends Controller
             return $response;
         }
         //Tell the service to do the job
-        return (new CommentService())->updateComment($request, $Comment);
+        return (new CommentService())->updateComment($request, $comment);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comment  $Comment
+     * @param  int  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($Comment)
+    public function destroy($comment)
     {
         //
        try{
-            $Comment = Comment::find($Comment);
-            if($Comment)
+            $comment = Comment::find($comment);
+            if($comment)
             {
-                if($Comment->delete())
+                if($comment->delete())
                 {
-                    return $this->response("Comment deleted.", Response::HTTP_OK, $Comment->toArray());
+                    return $this->response("Comment deleted.", Response::HTTP_OK, $comment->toArray());
                 }
                 return  $this->response("Comment couldn't be deleted.", Response::HTTP_SERVICE_UNAVAILABLE);
             }
