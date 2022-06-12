@@ -2,80 +2,66 @@
 
 namespace App\Services;
 
-use App\Traits\ConsumeExternalService;
+
+use App\Traits\ConsumeMicroserviceService;
 
 class PostService
 {
-    use ConsumeExternalService;
+    use ConsumeMicroserviceService;
 
     /**
-     * The base uri to consume authors service
+     * The base uri to consume post microservice
      * @var string
      */
     public $baseUri;
 
     /**
-     * Authorization secret to pass to author api
+     * Authorization secret to pass to post microservice
      * @var string
      */
     public $secret;
 
     public function __construct()
     {
-        $this->baseUri = config('services.shipment.base_uri');
-        $this->secret = config('services.shipment.secret');
+        $this->baseUri = config('services.post.base_uri');
+        $this->secret = config('services.post.secret');
     }
 
 
     /**
-     * Requests shipment tracking data from Shipment Api Microservice
+     * Requests all posts of a user  from post microservice
      */
-    public function tracking($request, $trackingId)
+    public function index($request)
     {
-        return $this->performRequest('GET', '/tracking/'.$trackingId, $request->all(), $request->headers->all());
+        return $this->performRequest('GET', '/post/all/'.$request->user()->id , $request->all(), $request->headers->all());
     }
     /**
-     * Requests Shipment Api Microservice to decode a VIN Number
+     * Requests post microservice to store a new post
      */
-    public function vinDecode($request, $vin)
+    public function store($request)
     {
-        return $this->performRequest('GET', '/vin-decode/'.$vin, $request->all(), $request->headers->all());
+        return $this->performRequest('POST', '/post', array_merge($request->all(), ['user_id' => $request->user()->id ]), $request->headers->all());
     }
     /**
-     * Requests Shipment Api Microservice to provide shipments data
+     * Requests post microservice to provide posts data
      */
-    public function shipments($request)
+    public function show($request, $post)
     {
-        //Get the correct id of the user
-        $userId = GatewayService::getUserId($request);
-        return $this->performRequest('GET', '/shipments/'.$userId, $request->all(), $request->headers->all());
+        return $this->performRequest('GET', '/post/'.$post, $request->all(), $request->headers->all());
     }
     /**
-     * Requests Shipment Api Microservice to provide a shipment data
+     * Requests post microservice to update a post
      */
-    public function shipment($request, $shipmentId)
+    public function update($request, $post)
     {
-        //Get the correct id of the user
-        $userId = GatewayService::getUserId($request);
-        return $this->performRequest('GET', '/shipment/'.$shipmentId."/".$userId, $request->all(), $request->headers->all());
+        return $this->performRequest('POST', '/post/'.$post, $request->all(), $request->headers->all());
     }
     /**
-     * Requests Shipment Api Microservice to provide booking rates
+     * Requests post microservice to delete a post
      */
-    public function bookingRates($request)
+    public function destroy($request, $post)
     {
-        //Get the correct id of the user
-        // $userId = GatewayService::getUserId($request);
-        return $this->performRequest('POST', '/booking-rates', $request->all(), $request->headers->all());
-    }
-    /**
-     * Requests Shipment Api Microservice to store new booking
-     */
-    public function doBooking($request)
-    {
-        //Get the correct id of the user
-        $userId = GatewayService::getUserId($request);
-        return $this->performRequest('POST', '/do-booking', array_merge($request->all(), ['user_id' => $userId]), $request->headers->all());
+        return $this->performRequest('DELETE', '/post/'.$post, $request->all(), $request->headers->all());
     }
     
 }

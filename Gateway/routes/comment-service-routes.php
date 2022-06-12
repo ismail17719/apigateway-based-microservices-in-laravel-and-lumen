@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 //or authenticated user
 Route::middleware('auth:api')->prefix('v1/'.config('gateway.comment_prefix'))->group(function(){
 
-    Route::get('comment/all/user', [CommentServiceController::class, "indexUser"]);
-    Route::get('comment/all/post/{postId}', [CommentServiceController::class, "indexPost"]);
-    Route::post('comment', [CommentServiceController::class, "store"]);
-    Route::get('comment/{comment}', [CommentServiceController::class, "show"]);
-    Route::post('comment/{comment}', [CommentServiceController::class, "update"]);
-    Route::delete('comment/{comment}', [CommentServiceController::class, "destroy"]);
+    Route::get('all/user', [CommentServiceController::class, "indexUser"]);
+    Route::get('all/post/{postId}', [CommentServiceController::class, "indexPost"]);
+    Route::post('/', [CommentServiceController::class, "store"]);
+    Route::get('/{comment}', [CommentServiceController::class, "show"]);
+    Route::post('/{comment}', [CommentServiceController::class, "update"]);
+    Route::delete('/{comment}', [CommentServiceController::class, "destroy"]);
    
 });
 

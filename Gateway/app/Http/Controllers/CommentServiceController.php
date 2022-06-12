@@ -86,9 +86,9 @@ class CommentServiceController extends Controller
      * @param  $id int id of the comment
      * @return \Illuminate\Http\JsonResponse
      */
-    public function delete(Request $request, $comment)
+    public function destroy(Request $request, $comment)
     {
-        return $this->response($this->commentService->delete($request, $comment));
+        return $this->response($this->commentService->destroy($request, $comment));
     }
     
 }

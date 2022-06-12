@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\AddressBookServiceController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\PostServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +16,10 @@ use Illuminate\Support\Facades\Route;
 //API endpoints that require valid token to access
 //or authenticated user
 Route::middleware('auth:api')->prefix('v1/'.config('gateway.post_prefix'))->group(function(){
-
-    Route::get('/all', [AddressBookServiceController::class, "all"]);
-    Route::get('/show-all', [AddressBookServiceController::class, "showAll"]);
-    Route::get('/show/{id}', [AddressBookServiceController::class, "show"]);
-    Route::post('/search', [AddressBookServiceController::class, "search"]);
-    Route::post('/store', [AddressBookServiceController::class, "store"]);
-    Route::patch('/update', [AddressBookServiceController::class, "update"]);
-    Route::delete('/delete/{id}', [AddressBookServiceController::class, "delete"]);
+    Route::get('/all/{userId}', [PostServiceController::class, "index"]);
+    Route::post('/', [PostServiceController::class, "store"]);
+    Route::get('/{post}', [PostServiceController::class, "show"]);
+    Route::post('/{post}', [PostServiceController::class, "update"]);
+    Route::delete('/{post}', [PostServiceController::class, "destroy"]);
 });
 

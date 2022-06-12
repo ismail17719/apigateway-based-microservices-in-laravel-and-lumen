@@ -22,49 +22,50 @@ class PostServiceController extends Controller
         $this->postService = $postService;
     }
     /**
-     * This method requests and returns terms of service data from shipment API Microservice
+     * This method requests and returns all posts of a user from post microservice
      * @param  \Illuminate\Http\Request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function tracking(Request $request, $trackingId)
+    public function index(Request $request)
     {
-        return $this->successResponse($this->shipmentService->tracking($request, $trackingId));
+        return $this->response($this->postService->index($request));
     }
     /**
-     * This method requests Shipment API Microservice to decode a VIN Number
+     * This method requests post microservice to store a new post
      * @param  \Illuminate\Http\Request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function vinDecode(Request $request, $vin)
+    public function store(Request $request)
     {
-        return $this->successResponse($this->shipmentService->vinDecode($request, $vin));
+        return $this->response($this->postService->store($request));
     }
     /**
-     * This method requests and returns shipments data of a user from Shipment API Microservice
+     * This method requests and returns post data of a user from post microservice
      * @param  \Illuminate\Http\Request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function shipments(Request $request)
+    public function show(Request $request, $post)
     {
-        return $this->successResponse($this->shipmentService->shipments($request));
+        return $this->response($this->postService->show($request, $post));
     }
     /**
-     * This method requests and returns shipment data of a user from Shipment API Microservice
+     * This method requests post microservice to update a post
      * @param  \Illuminate\Http\Request
+     * @param  Int $postId id of the post
      * @return \Illuminate\Http\JsonResponse
      */
-    public function shipment(Request $request, $shipmentId)
+    public function update(Request $request, $post)
     {
-        return $this->successResponse($this->shipmentService->shipment($request, $shipmentId));
+        return $this->response($this->postService->update($request, $post));
     }
     /**
-     * This method requests and returns booking rates Shipment API Microservice
+     * This method requests post microservice to delete a post
      * @param  \Illuminate\Http\Request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function bookingRates(Request $request)
+    public function destroy(Request $request, $post)
     {
-        return $this->successResponse($this->shipmentService->bookingRates($request));
+        return $this->response($this->postService->destroy($request, $post));
     }
     /**
      * This method requests Shipment API Microservice to store new booking data
@@ -73,6 +74,6 @@ class PostServiceController extends Controller
      */
     public function doBooking(Request $request)
     {
-        return $this->successResponse($this->shipmentService->doBooking($request));
+        return $this->successResponse($this->postService->doBooking($request));
     }
 }
