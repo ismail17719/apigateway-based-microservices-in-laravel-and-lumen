@@ -73,5 +73,4 @@ class CommentService
         return $this->performRequest('DELETE', '/comment/'.$comment,$request->all(), $request->headers->all());
     }
     
-    
 }
