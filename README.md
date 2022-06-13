@@ -136,6 +136,8 @@ ACCEPTED_SECRETS=base64:PiBDvD+PquYM6uP1oEAKBcLBZsHGxDxnRuMexRIj6Qg=
 ```
 ## Requests
 
-All API endpoints are protected with Passport on guarding the gateway. To access an endpoint and get a response you first need to get an access token. Here is the request for an access token:
+All API endpoints are protected by Passport on the gateway. To access an endpoint and get a response you first need to get an access token. Get your favourite REST client and get to work. Needs help. You can find a sample of requests/responses in Postman file in the root directory of this project. 
+
+Happy microservicing :sparkling_heart:
 
  :boom: :boom: :boom:
