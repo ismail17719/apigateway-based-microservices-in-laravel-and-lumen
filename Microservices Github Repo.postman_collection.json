@@ -1,0 +1,1275 @@
+{
+	"info": {
+		"_postman_id": "6160592d-afda-4556-8822-64af76318a57",
+		"name": "Microservices Github Repo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18566091"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get Access Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "75VMj5F3rrZVPdtCx6dKTskVnTHBZCGWl3V6iQRv",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "a@a.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/token",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Get Access Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "75VMj5F3rrZVPdtCx6dKTskVnTHBZCGWl3V6iQRv",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "a@a.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "a",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "githubmsgateway.com/api/v1/token",
+									"host": [
+										"githubmsgateway",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 06:00:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1856"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Access granted\",\n    \"data\": {\n        \"token_type\": \"Bearer\",\n        \"expires_in\": 31536000,\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNmViOWY1N2VlNzY5NjNkZTRkYzEyYzA1MjhiYjYyZDE3MGFiZDljOTgzYWM4ODAyMzQ5YTMzMjI4Zjc0YmY2Njg2MjIzOGRlNDE0OTY3ZDEiLCJpYXQiOjE2NTUwMTM2NTcuNjQ2OTc5LCJuYmYiOjE2NTUwMTM2NTcuNjQ2OTg2LCJleHAiOjE2ODY1NDk2NTcuNDAzODAyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fjqk_HbjfpHr1OEvNUkb8wJLK2ElSfnoRNiwiA7kfGr8gCuyypLpDZrw2PSS0akgcbETuWyaMCSWj4ICcBUxFaVeNvXmGxhFSxZkNeRUtr-t2nd-rGARvxVQlai3NG6dhvkStvTiDXoqfQitYP-tykpm3oisZHNQu2Dv-N7ZztRjtn3gYh_pmiujvu_cW1yxB72SDfrEHm4heNILWS0guCh7Rzjzh7aPCfRaakY7NLGpibNECYlbyZ3vihxjoPgH5hbpnqB10HlDHSuQmL6gfJje8oPwLWE8kK7WqVCk35P3zAow-XYCGnoKkpA9v7Umu6-Lz2qmFrVY_8ms_AxtfQT-daVFIm1SQTPuGDP10lJg4e571-WFYnXYZKzYFxmIpLj8UT70W0JuaaoZ5U_Dl4IZuIElZgvrq20K8RYqWP2zG72-A5uxH_DL3O-CQaB_NGz8pJSEQfd6dd8cA0JJ2isaon_3qgca3ObQVDM5FMurDn6raDU3lhyvTD4niF5h8K4EeLQ51v3BuQu91Xj0v-x0Kyl3eidthr3aeb-8uFaWdLeW58Vjp5PRsrjojw2I1D6zDe4oHeBs1XncrMd0gcV5TBslommXykey7jWYtoymeMWRzCxtXigYSkzrHhA92X-spuHSueggQYfEIfNmJh73j5wQUByu6fR0QOBmgTw\",\n        \"refresh_token\": \"def502009769785f6d74daf4576b10c643d860acafba9181afa10ad1a2c8aec36e8a2c8bc732de34a45ba8320a346de29f3f127d0af1f6410a4a43467f5eda462fe363b41c40b6d5dd95258d35d604c6cd6c6c02e323a700314aa816398c8c13bc2dfc4c2a7bf4f315d242392556f707d9a51ca6cbd40d1ece8e15625217499317868aedb4a743f1f3a0fe57e218e48a36f81255da81180f96817282e1397f32873c9193f28cc6d05b8b2f9da1953c73911304b25ab0fed35ae7729bcb8cffbc5e334c6ff5c792fa909b26804b868ca49e7ed3edb99fecf143e13351d7acea2c44ea11326374c22b335513b45fe6640ca528174b33242327ac3b4866fcd130a5838bb1d719e6f031a73c89942fbdcb09ff8bfd78d929fd8c3d1f684c6b2b0eb09433df6fcdee7b2d5c91cc9112adf6055d93f9fd39780a136d6e37b3feb1fcbe1a9857de0fab9be1a026fbf2201839552336daa3bb8cab97b2e260df525ec69685\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Check if User is Authenticated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/auth-test",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth-test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post Gateway",
+			"item": [
+				{
+					"name": "Get all Posts of a User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/post/all/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"all",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Get all Posts of a User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "githubmspost.com/post/all/1",
+									"host": [
+										"githubmspost",
+										"com"
+									],
+									"path": [
+										"post",
+										"all",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 07:30:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5067"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"All posts of user 1\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Ullam rerum voluptatem consectetur rerum voluptates aut et.\",\n            \"slug\": \"ullam-rerum-voluptatem-consectetur-rerum-voluptates-aut-et\",\n            \"body\": \"Maiores voluptas cupiditate aspernatur eos. Quod aut corporis maiores nihil rerum ex a. Omnis officiis quidem tempora exercitationem perspiciatis. Esse harum iusto voluptates amet explicabo veniam.Dolor consequatur vero cum est impedit nulla velit. Placeat nostrum inventore neque ut tempore hic expedita voluptatum. Nesciunt sunt eligendi laborum. Corporis id iusto quo eum ut.Voluptatem autem corrupti sit aperiam iste asperiores. Porro velit veritatis sit accusamus illo. Enim sunt quae odit quia aut dolores. Non est ut assumenda saepe. Itaque sed unde adipisci et.Dolores qui quia ipsum dolor reiciendis. Ut iste vel velit pariatur eveniet. Impedit odio ipsam inventore totam. Est provident corrupti dolor neque.\",\n            \"status\": \"published\",\n            \"hearts\": 437,\n            \"views\": 904,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"updated_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Est maiores id aut eligendi mollitia architecto delectus.\",\n            \"slug\": \"est-maiores-id-aut-eligendi-mollitia-architecto-delectus\",\n            \"body\": \"Aut laudantium laboriosam quam consequuntur. Soluta facere necessitatibus blanditiis. Ipsam dolorem et eaque saepe. Beatae impedit nemo aliquam voluptas nobis aut sapiente.Vero nesciunt voluptatum illo et dolor quia nesciunt. Ipsam voluptatibus eaque libero amet non quos. Libero quia minus et quia perspiciatis aut.Esse ut qui consequuntur sapiente nihil. Autem reiciendis recusandae nobis a non. Ratione repellendus quaerat doloribus cupiditate dolor sapiente qui architecto. Voluptates dolores doloribus ea.Sit quibusdam ut ad eum. Et hic placeat voluptates eum recusandae eos occaecati. Eligendi ut nihil aut vel ea quo corporis architecto.\",\n            \"status\": \"published\",\n            \"hearts\": 452,\n            \"views\": 876,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"updated_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 12,\n            \"title\": \"Quod enim iure earum unde.\",\n            \"slug\": \"quod-enim-iure-earum-unde\",\n            \"body\": \"Sit id vel hic neque et nihil. Rem aliquam est quia voluptatem. Et voluptatibus eligendi eos aut excepturi. Aut ipsum corrupti rem culpa.Reiciendis ut ab occaecati unde et consequatur qui. Neque tempora laudantium veritatis eum quia omnis. Quis voluptas voluptatem repellat incidunt officia veritatis magni quam.Hic iusto quia officiis. Dolore assumenda voluptates illo. Itaque quisquam esse rerum commodi repudiandae eaque consequatur. Molestiae quas nulla id officia labore neque aut.Dolores ratione id sed est. Facere voluptates et velit quia asperiores ut. Reprehenderit labore dicta omnis sunt ut distinctio. Dolorem consectetur nihil officia quo aperiam veritatis asperiores.\",\n            \"status\": \"published\",\n            \"hearts\": 368,\n            \"views\": 106,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"updated_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 14,\n            \"title\": \"Consequuntur cum fuga consequuntur sed.\",\n            \"slug\": \"consequuntur-cum-fuga-consequuntur-sed\",\n            \"body\": \"Autem assumenda qui unde soluta molestiae sed laudantium. Aut ea excepturi dolores similique deserunt animi.Consectetur officia est earum aperiam voluptas. Explicabo qui quia incidunt non. Laborum amet qui ullam voluptas asperiores aliquid.Facere eligendi temporibus cupiditate quaerat. Itaque magnam omnis laborum ducimus. Laudantium dolorum natus qui ex. Vel placeat et ut et aut sunt ipsum amet.Atque error dolorum illo. Dolorum accusantium voluptatem ut eum facilis impedit corrupti neque. Voluptatum magni aut dolor incidunt. Tempore quos repudiandae quisquam eligendi nihil laborum maiores.\",\n            \"status\": \"published\",\n            \"hearts\": 72,\n            \"views\": 644,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"updated_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 15,\n            \"title\": \"Sed autem sapiente dolores excepturi omnis.\",\n            \"slug\": \"sed-autem-sapiente-dolores-excepturi-omnis\",\n            \"body\": \"Doloremque velit quia dolorum ea qui voluptates. Non aperiam doloribus quisquam ipsam.Est consectetur accusamus quia voluptatum. Eos consequatur maxime adipisci est sed nam quidem. Expedita repudiandae perferendis et blanditiis quam et pariatur. Fugiat voluptatibus vero voluptatem est non.Est repellat laudantium consequatur et in. Et ex a voluptatem aut aperiam necessitatibus necessitatibus. Alias eos nihil magni nisi qui. Est numquam officia ea.Enim et dolor at nesciunt. Asperiores esse molestiae dolores consequatur cumque.\",\n            \"status\": \"published\",\n            \"hearts\": 317,\n            \"views\": 714,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"updated_at\": \"2022-06-12T06:19:51.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 26,\n            \"title\": \"Demo of Post Microservice\",\n            \"slug\": \"demo-of-post-microservice\",\n            \"body\": \"We are doing this microservice in order to show how it works and how to build microservice architecture\",\n            \"status\": \"publish\",\n            \"hearts\": 0,\n            \"views\": 0,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T07:28:54.000000Z\",\n            \"updated_at\": \"2022-06-12T07:28:54.000000Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a New Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Demo of Post Microservice",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "We are doing this microservice in order to show how it works and how to build microservice architecture",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/post",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"post"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Create a New Post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Demo of Post Microservice",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "We are doing this microservice in order to show how it works and how to build microservice architecture",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "githubmspost.com/post",
+									"host": [
+										"githubmspost",
+										"com"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 07:28:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "425"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 201,\n    \"resPhrase\": \"Created\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Post created.\",\n    \"data\": {\n        \"title\": \"Demo of Post Microservice\",\n        \"slug\": \"demo-of-post-microservice\",\n        \"body\": \"We are doing this microservice in order to show how it works and how to build microservice architecture\",\n        \"status\": \"publish\",\n        \"hearts\": 0,\n        \"views\": 0,\n        \"user_id\": \"1\",\n        \"updated_at\": \"2022-06-12T07:28:54.000000Z\",\n        \"created_at\": \"2022-06-12T07:28:54.000000Z\",\n        \"id\": 26\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a Single Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/post/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Get a Single Post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "githubmspost.com/post/1",
+									"host": [
+										"githubmspost",
+										"com"
+									],
+									"path": [
+										"post",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 08:24:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1120"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Post found.\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Ullam rerum voluptatem consectetur rerum voluptates aut et.\",\n        \"slug\": \"ullam-rerum-voluptatem-consectetur-rerum-voluptates-aut-et\",\n        \"body\": \"Maiores voluptas cupiditate aspernatur eos. Quod aut corporis maiores nihil rerum ex a. Omnis officiis quidem tempora exercitationem perspiciatis. Esse harum iusto voluptates amet explicabo veniam.Dolor consequatur vero cum est impedit nulla velit. Placeat nostrum inventore neque ut tempore hic expedita voluptatum. Nesciunt sunt eligendi laborum. Corporis id iusto quo eum ut.Voluptatem autem corrupti sit aperiam iste asperiores. Porro velit veritatis sit accusamus illo. Enim sunt quae odit quia aut dolores. Non est ut assumenda saepe. Itaque sed unde adipisci et.Dolores qui quia ipsum dolor reiciendis. Ut iste vel velit pariatur eveniet. Impedit odio ipsam inventore totam. Est provident corrupti dolor neque.\",\n        \"status\": \"published\",\n        \"hearts\": 437,\n        \"views\": 904,\n        \"user_id\": 1,\n        \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n        \"updated_at\": \"2022-06-12T06:19:51.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update an Existing Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Updating Post Title",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "This is to demonstrate how updating the post works",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/post/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Update an Existing Post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Updating Post Title",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "This is to demonstrate how updating the post works",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "githubmspost.com/post/1",
+									"host": [
+										"githubmspost",
+										"com"
+									],
+									"path": [
+										"post",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 14:32:02 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "374"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Post updated.\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Updating Post Title\",\n        \"slug\": \"updating-post-title\",\n        \"body\": \"This is to demonstrate how updating the post works\",\n        \"status\": \"publish\",\n        \"hearts\": 437,\n        \"views\": 904,\n        \"user_id\": 1,\n        \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n        \"updated_at\": \"2022-06-12T14:32:02.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/post/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Delete a Post",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "githubmspost.com/post/1",
+									"host": [
+										"githubmspost",
+										"com"
+									],
+									"path": [
+										"post",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 14:34:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "399"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Post deleted.\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Updating Post Title\",\n        \"slug\": \"updating-post-title\",\n        \"body\": \"This is to demonstrate how updating the post works\",\n        \"status\": \"publish\",\n        \"hearts\": 437,\n        \"views\": 904,\n        \"user_id\": 1,\n        \"created_at\": \"2022-06-12T06:19:51.000000Z\",\n        \"updated_at\": \"2022-06-12T14:34:29.000000Z\",\n        \"deleted_at\": \"2022-06-12T14:34:29.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNmViOWY1N2VlNzY5NjNkZTRkYzEyYzA1MjhiYjYyZDE3MGFiZDljOTgzYWM4ODAyMzQ5YTMzMjI4Zjc0YmY2Njg2MjIzOGRlNDE0OTY3ZDEiLCJpYXQiOjE2NTUwMTM2NTcuNjQ2OTc5LCJuYmYiOjE2NTUwMTM2NTcuNjQ2OTg2LCJleHAiOjE2ODY1NDk2NTcuNDAzODAyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fjqk_HbjfpHr1OEvNUkb8wJLK2ElSfnoRNiwiA7kfGr8gCuyypLpDZrw2PSS0akgcbETuWyaMCSWj4ICcBUxFaVeNvXmGxhFSxZkNeRUtr-t2nd-rGARvxVQlai3NG6dhvkStvTiDXoqfQitYP-tykpm3oisZHNQu2Dv-N7ZztRjtn3gYh_pmiujvu_cW1yxB72SDfrEHm4heNILWS0guCh7Rzjzh7aPCfRaakY7NLGpibNECYlbyZ3vihxjoPgH5hbpnqB10HlDHSuQmL6gfJje8oPwLWE8kK7WqVCk35P3zAow-XYCGnoKkpA9v7Umu6-Lz2qmFrVY_8ms_AxtfQT-daVFIm1SQTPuGDP10lJg4e571-WFYnXYZKzYFxmIpLj8UT70W0JuaaoZ5U_Dl4IZuIElZgvrq20K8RYqWP2zG72-A5uxH_DL3O-CQaB_NGz8pJSEQfd6dd8cA0JJ2isaon_3qgca3ObQVDM5FMurDn6raDU3lhyvTD4niF5h8K4EeLQ51v3BuQu91Xj0v-x0Kyl3eidthr3aeb-8uFaWdLeW58Vjp5PRsrjojw2I1D6zDe4oHeBs1XncrMd0gcV5TBslommXykey7jWYtoymeMWRzCxtXigYSkzrHhA92X-spuHSueggQYfEIfNmJh73j5wQUByu6fR0QOBmgTw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Comment Gateway",
+			"item": [
+				{
+					"name": "Get all Posts of a User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/comment/all/user",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"all",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Get all Comments of a User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "githubmscomment.com/comment/all/user/1",
+									"host": [
+										"githubmscomment",
+										"com"
+									],
+									"path": [
+										"comment",
+										"all",
+										"user",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 15:20:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"All Comments of user 1\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"contents\": \"Cupiditate molestiae ut porro porro. Repellat quos accusantium iure dignissimos. Amet cumque est rerum aut quaerat vero voluptate. Consectetur velit consequatur iusto consequuntur aut reprehenderit dolor. Quaerat et suscipit laudantium et quia adipisci ea.\",\n            \"post_id\": 35,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 8,\n            \"contents\": \"Nobis laudantium voluptatem omnis rem rerum. Nihil quia omnis et sed libero. Facere nobis rerum enim magni dolore.\",\n            \"post_id\": 22,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 9,\n            \"contents\": \"Magni a voluptatem officiis ex qui. Voluptates qui vero hic eos. Et vel qui enim aut veritatis deleniti. Aut exercitationem sequi unde consequatur quod.\",\n            \"post_id\": 29,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 19,\n            \"contents\": \"Quod impedit aspernatur aut consequatur id ducimus. Doloribus tenetur modi iste voluptas. Magni provident quas est ducimus tenetur et aut.\",\n            \"post_id\": 37,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 28,\n            \"contents\": \"Quidem perspiciatis nihil natus pariatur ipsam cum. Deserunt cupiditate consequatur qui ullam voluptates assumenda voluptatem. Necessitatibus quas vel sit quas.\",\n            \"post_id\": 19,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 30,\n            \"contents\": \"Et tenetur distinctio doloribus aut vitae. Dolor qui culpa deserunt ut voluptates iure rem. Assumenda quia rerum perspiciatis placeat consequatur iusto itaque.\",\n            \"post_id\": 4,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 34,\n            \"contents\": \"Aspernatur provident eligendi voluptates nam fugiat voluptatem. Veritatis sint voluptatum vero repellat in. Aut non sit est ducimus est quam aspernatur. Nihil perferendis id esse odit magnam magnam aut.\",\n            \"post_id\": 29,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 40,\n            \"contents\": \"Enim voluptate deleniti non aut rem. Dolor quam rem omnis vero. Molestiae voluptates nisi qui excepturi et quis. Non facilis impedit harum necessitatibus. Eveniet suscipit magnam doloribus quos totam eaque.\",\n            \"post_id\": 9,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 42,\n            \"contents\": \"Quaerat omnis culpa perspiciatis qui aut unde ipsam. Accusamus dolorem non ducimus non qui est placeat aliquam. Soluta quo similique mollitia placeat. A rerum quos consectetur nobis eligendi.\",\n            \"post_id\": 44,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 43,\n            \"contents\": \"Omnis vel nobis dicta cum sunt. Quam commodi unde distinctio deserunt vel excepturi. Animi dignissimos fugiat aliquam qui distinctio.\",\n            \"post_id\": 50,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 44,\n            \"contents\": \"Magni soluta quod perferendis ut magni enim ut. Quae culpa voluptate ad cupiditate pariatur quaerat at. Consequuntur non modi voluptates. Sed aperiam rerum eos tempora accusantium. Qui similique qui nesciunt porro rem quasi.\",\n            \"post_id\": 48,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 48,\n            \"contents\": \"Similique impedit ut inventore delectus et natus veniam. Temporibus alias id quia eos necessitatibus debitis. Totam dolorum velit minima.\",\n            \"post_id\": 29,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 51,\n            \"contents\": \"Et placeat id nisi molestiae qui impedit sapiente. Et totam ea corporis sunt. Maiores atque quos perferendis fugit beatae eos.\",\n            \"post_id\": 3,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 53,\n            \"contents\": \"Quis error est voluptatem. Officia non et et ab ipsa quos. Mollitia est est aliquid. At deleniti perferendis est iure.\",\n            \"post_id\": 31,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 54,\n            \"contents\": \"Illum optio distinctio et et in. Sapiente consequatur voluptate eos odio neque. Nobis et sit qui nobis cum. Quam eveniet aut officiis et nemo.\",\n            \"post_id\": 31,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 57,\n            \"contents\": \"Aut enim qui ut ullam omnis. In odio voluptas totam cumque et hic ea. Labore sequi aut molestias qui soluta. Quam quis voluptatem perferendis accusamus rem sit dolorum ut.\",\n            \"post_id\": 1,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 62,\n            \"contents\": \"Natus architecto sit corrupti. Quia aut omnis saepe et. Beatae facilis qui quia qui nam.\",\n            \"post_id\": 42,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 66,\n            \"contents\": \"Necessitatibus ut eligendi molestias delectus blanditiis. Vel dolores reprehenderit accusamus quo quis quas ut. Quibusdam dolorem nisi fugit sit et nemo culpa. Quia sint eum incidunt nihil voluptatem.\",\n            \"post_id\": 23,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 67,\n            \"contents\": \"Dolor est dolorum pariatur quisquam aliquam aliquam. Ex blanditiis itaque deleniti aut nesciunt consequatur.\",\n            \"post_id\": 1,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 68,\n            \"contents\": \"Est doloremque aut velit placeat repudiandae beatae ut. Nostrum in non ipsum est. Consequuntur ad et omnis.\",\n            \"post_id\": 49,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 71,\n            \"contents\": \"Eligendi dignissimos nemo aut quos. Ratione ut nihil atque dolores provident cupiditate enim. Officiis rem facere et ut in iure. Et quisquam consequatur sed id ipsam dolores repellat.\",\n            \"post_id\": 4,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 75,\n            \"contents\": \"Earum id molestiae labore neque. Provident ea est provident eaque vel non. Nobis ut autem alias maiores soluta. Qui nihil cumque sed voluptas impedit quam qui.\",\n            \"post_id\": 29,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 77,\n            \"contents\": \"Tenetur quibusdam pariatur voluptatem nihil dolores et qui aliquam. Voluptate et perferendis omnis rem facere. Et ea tempora dolores incidunt rerum voluptatem corrupti. Ut nihil ut error mollitia qui nesciunt assumenda.\",\n            \"post_id\": 12,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 81,\n            \"contents\": \"Dicta veniam eum adipisci et. Rerum neque quis numquam inventore blanditiis quia. Esse non perferendis iste repellat fugiat soluta eligendi.\",\n            \"post_id\": 13,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 92,\n            \"contents\": \"Earum quaerat suscipit iusto dicta minima quia. Dolor ex qui non vel aut perferendis. Et eligendi aut doloremque quas est.\",\n            \"post_id\": 3,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 111,\n            \"contents\": \"Rerum qui omnis et alias tempora quae aliquam autem. Et sit dicta quia quis. Eligendi non et occaecati et magnam aliquam.\",\n            \"post_id\": 43,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 112,\n            \"contents\": \"Quidem voluptatem sunt architecto minima et. Dolorum aut voluptas officia.\",\n            \"post_id\": 4,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 115,\n            \"contents\": \"Eaque nisi deserunt numquam quasi ullam architecto. Et vitae esse architecto et neque officia. Ipsa nemo ea natus officia ipsa atque. Facere quibusdam qui ipsam praesentium.\",\n            \"post_id\": 15,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 119,\n            \"contents\": \"Nihil rem praesentium in nesciunt repellat ut. Ut blanditiis neque est quam vitae aut omnis. Velit molestias eius et dolore quia expedita dolorem.\",\n            \"post_id\": 38,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 121,\n            \"contents\": \"Officia corrupti qui voluptas est ab. Itaque optio sapiente a veniam sunt quaerat. Qui illo dolore et. Ullam adipisci sint vero ut odio.\",\n            \"post_id\": 31,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 126,\n            \"contents\": \"Saepe rem reiciendis et ut voluptas consectetur. Deleniti sint porro accusamus quam nihil asperiores eaque. Vel veniam incidunt ab dolore est aut omnis. Maiores aut fuga odio deserunt numquam ut qui.\",\n            \"post_id\": 7,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 128,\n            \"contents\": \"Voluptatem quasi ullam molestias culpa consequatur impedit nobis nam. Eius est deleniti reprehenderit aperiam et cupiditate. Sit aut quia ex accusamus quasi distinctio occaecati. Magnam aliquid eius et. Dolores doloribus consequatur est earum vel eos dolorem.\",\n            \"post_id\": 15,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 135,\n            \"contents\": \"Eos laborum eum exercitationem et rerum voluptas eveniet ratione. Voluptatibus facilis vel rerum iste aut perferendis commodi. Et ut dolores sit laborum corporis magni aperiam. Quo atque voluptas nemo odit dolorum tempora sed.\",\n            \"post_id\": 45,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 136,\n            \"contents\": \"Iste dignissimos rem vitae nihil qui. Exercitationem et qui aut. Nesciunt quidem aperiam et ab et sed.\",\n            \"post_id\": 29,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 137,\n            \"contents\": \"Amet eaque soluta sit nihil dignissimos doloremque aut reprehenderit. Ipsam quasi doloremque aut repudiandae. Quo officia eligendi quidem dolorem expedita nihil iusto et. Qui unde ipsam perspiciatis quaerat placeat dolores asperiores.\",\n            \"post_id\": 26,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 138,\n            \"contents\": \"Esse aut dicta omnis enim. Enim aliquam blanditiis voluptas animi. Eaque dignissimos eius et autem eaque. Voluptatem laboriosam maiores cumque eos esse blanditiis maxime.\",\n            \"post_id\": 33,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 141,\n            \"contents\": \"Id vel totam placeat porro. Maxime sapiente in voluptatem. Consectetur eum expedita quod dolor ut explicabo.\",\n            \"post_id\": 12,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 160,\n            \"contents\": \"Quidem fuga aut sunt quo qui dolores. Facere qui amet qui accusantium quis facere vel. Alias architecto ut ut. Esse consequatur molestias nobis perferendis tempora.\",\n            \"post_id\": 9,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 161,\n            \"contents\": \"Ut corporis et ullam eaque perferendis tenetur et ratione. Asperiores placeat ipsum voluptas nesciunt. Nihil dolores nobis voluptatem rerum aut. Saepe non id tempora laborum inventore voluptatem.\",\n            \"post_id\": 3,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 173,\n            \"contents\": \"Esse totam sed dolorem ipsam impedit. Minus non possimus aut quidem nihil adipisci molestiae. Alias ut earum dignissimos delectus dolor cum. Quia tempore alias ad ut ut nobis. Doloribus ut labore aperiam.\",\n            \"post_id\": 31,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 177,\n            \"contents\": \"Est sapiente facilis necessitatibus facilis. Deleniti nostrum occaecati debitis culpa inventore totam. Et ut ut nihil sed officiis sapiente. Omnis quas quae ut ratione.\",\n            \"post_id\": 32,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 178,\n            \"contents\": \"Ad cupiditate temporibus sit inventore voluptatum voluptatem soluta molestias. Maiores ut nisi illo qui qui neque. Dignissimos explicabo reprehenderit error non tempora voluptas cupiditate. Laborum doloremque perspiciatis quo nemo.\",\n            \"post_id\": 26,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 188,\n            \"contents\": \"Nihil et ipsa perspiciatis enim provident et aut. Autem debitis aspernatur sunt et. Consectetur sequi aliquid ut voluptas beatae dolores enim.\",\n            \"post_id\": 49,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 190,\n            \"contents\": \"Eos ut quia blanditiis nesciunt inventore. Autem qui ea harum et. Qui in rerum sed et ratione amet consequatur. Et ex aut iure incidunt voluptate impedit.\",\n            \"post_id\": 43,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 191,\n            \"contents\": \"Eos maxime quia saepe laborum modi nostrum numquam aut. Consequuntur quis nobis fugiat itaque reiciendis quo. Perferendis qui aperiam facere velit tempore et veritatis. Qui beatae doloribus sed quia deleniti quo rem.\",\n            \"post_id\": 39,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 196,\n            \"contents\": \"Ipsum dolor vel voluptatum. Et sint quam accusamus consequuntur. Incidunt et voluptatum molestiae est maxime ex. Cum laboriosam inventore tempora dolorem.\",\n            \"post_id\": 21,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 197,\n            \"contents\": \"Rerum et qui ipsa a cumque est. Quos incidunt cupiditate quo voluptas consequatur quo. Fuga voluptas quisquam sit amet aut.\",\n            \"post_id\": 42,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 198,\n            \"contents\": \"Ullam qui sunt sapiente nobis voluptatibus rerum. Nisi ullam atque libero ut et. Vero animi non quasi sit voluptatem ratione. Ipsum ut eligendi voluptatem qui.\",\n            \"post_id\": 8,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 199,\n            \"contents\": \"Placeat voluptatum modi magnam at voluptates suscipit et. In enim eum est quas minus magni consequatur. Commodi quidem quisquam blanditiis vel.\",\n            \"post_id\": 49,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 200,\n            \"contents\": \"Id libero amet adipisci velit beatae. Rem omnis quia omnis deserunt perferendis dolor magni. Accusamus et ullam fugiat reprehenderit numquam. Molestias voluptas labore harum id dignissimos occaecati et. Beatae id ut quis dolore illo est.\",\n            \"post_id\": 26,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 233,\n            \"contents\": \"Porro commodi quisquam quasi. Occaecati rem aperiam officia similique error.\",\n            \"post_id\": 20,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 234,\n            \"contents\": \"Impedit dolores est ex. Corrupti impedit odio eius nostrum quaerat vitae. Natus et sint tempore doloribus quia qui expedita omnis. Praesentium eum labore aut.\",\n            \"post_id\": 12,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 238,\n            \"contents\": \"Et eveniet sequi dolor vel deserunt pariatur occaecati. Veniam nobis modi inventore suscipit ad. Impedit hic corrupti doloremque rerum. Saepe doloribus nesciunt dolor dolorum animi quas reprehenderit.\",\n            \"post_id\": 24,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 242,\n            \"contents\": \"Est et veniam modi sit. Quo illum veniam dolorem aut. Quas omnis nesciunt repudiandae cumque.\",\n            \"post_id\": 31,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 243,\n            \"contents\": \"Quae similique nostrum harum est repellendus est. Qui qui aspernatur omnis deserunt ipsa itaque.\",\n            \"post_id\": 50,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 249,\n            \"contents\": \"Omnis nesciunt magni velit temporibus labore nam. Impedit omnis provident et est. Eum officia enim occaecati. At eum quis adipisci quis id in.\",\n            \"post_id\": 43,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 258,\n            \"contents\": \"Iste et ab rerum voluptatem blanditiis eum quisquam. Illo amet id quas ducimus. Ea ut ea sed nam voluptas et. Quas omnis sunt tempora minima est facere aliquid est.\",\n            \"post_id\": 10,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 264,\n            \"contents\": \"Voluptatibus sunt et dolore voluptas maiores. Est praesentium fuga animi fugiat quia omnis est. Id aspernatur eligendi repellendus harum reiciendis et.\",\n            \"post_id\": 35,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 272,\n            \"contents\": \"Ex quia ea expedita nulla placeat debitis dolor. Voluptatem odio voluptatem et doloremque et error consectetur recusandae. Eius porro ipsam laborum officiis sequi exercitationem. Est ipsam consectetur tempore ducimus voluptatem fuga porro.\",\n            \"post_id\": 26,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 278,\n            \"contents\": \"Commodi et totam eaque incidunt quia. Non molestias molestiae facere vel error et nobis nemo.\",\n            \"post_id\": 36,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 280,\n            \"contents\": \"Debitis non doloremque corporis consectetur ut. Nemo voluptas quas soluta eos. Qui et sed nulla quia ex et.\",\n            \"post_id\": 5,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 282,\n            \"contents\": \"Provident ut suscipit cum eum. Provident vero debitis distinctio vel aut ducimus. Placeat laborum quo blanditiis cupiditate qui excepturi impedit. Et est et laborum. Earum maiores facilis distinctio sed iusto iure.\",\n            \"post_id\": 25,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 284,\n            \"contents\": \"Minima pariatur pariatur alias eveniet nostrum ex. Aut ut omnis iure excepturi blanditiis eius. Reprehenderit doloremque natus quis officiis molestias.\",\n            \"post_id\": 12,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 300,\n            \"contents\": \"Provident voluptates voluptas rerum beatae cumque. Voluptatum dolore sit qui et perferendis. Et incidunt vel cumque in.\",\n            \"post_id\": 43,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 303,\n            \"contents\": \"Autem a unde illo ut facilis error velit. Id nulla sequi consequatur quos aliquam velit reprehenderit. Dolores atque quo accusamus qui iure rem voluptate.\",\n            \"post_id\": 22,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 307,\n            \"contents\": \"Veniam aut vitae delectus et ut. Error qui libero eligendi itaque. Ut hic rerum corporis. Non omnis incidunt error consequuntur qui et aut. Nihil consectetur recusandae ducimus excepturi asperiores laboriosam.\",\n            \"post_id\": 1,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 308,\n            \"contents\": \"Magni inventore error saepe harum et. Dolore sequi dolorem non officia aut nihil. Esse quibusdam qui ea distinctio repellendus. Et consequuntur asperiores id illum distinctio laboriosam.\",\n            \"post_id\": 12,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 316,\n            \"contents\": \"Et aspernatur ut non est. Omnis dolorem aut soluta omnis tempora debitis non. Tempore minima voluptas debitis et et quaerat.\",\n            \"post_id\": 44,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 319,\n            \"contents\": \"Praesentium repellendus velit aut excepturi rerum consequuntur. Dolor nihil est voluptates sapiente quis ad. Asperiores voluptate et dolores eligendi corrupti. Dolores qui aut sit laborum quas at error.\",\n            \"post_id\": 28,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 328,\n            \"contents\": \"Qui numquam possimus facere fugit nostrum ut ea. Ipsam sit sunt et. Eos animi est id. Doloribus aperiam iusto aut inventore.\",\n            \"post_id\": 40,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 335,\n            \"contents\": \"Aliquid eveniet placeat facere omnis eaque necessitatibus. Non iusto fugiat et officiis quam et perferendis. Dolorum hic quae tenetur recusandae dignissimos exercitationem est.\",\n            \"post_id\": 35,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 337,\n            \"contents\": \"Ipsum labore sed quia doloremque sunt. Dolor aut sed omnis eveniet incidunt. Impedit et voluptatem in quisquam. Et natus eos iusto dolorem totam.\",\n            \"post_id\": 46,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 341,\n            \"contents\": \"Et eaque tenetur facere voluptatum ut voluptas eligendi. Magni cumque quia adipisci natus explicabo aliquam. Sed minima velit voluptatem non maxime. Velit vel in magni voluptas.\",\n            \"post_id\": 26,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 347,\n            \"contents\": \"Minima omnis delectus officia qui velit. Quod unde inventore asperiores aliquid temporibus cum corporis. Maiores voluptatem repudiandae sed impedit laudantium cum qui.\",\n            \"post_id\": 47,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 358,\n            \"contents\": \"Fugit nihil unde perspiciatis et ut mollitia. Tempora facere rerum eligendi aut enim. Quam perspiciatis dolores quia pariatur.\",\n            \"post_id\": 24,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 359,\n            \"contents\": \"Voluptas est consequatur aut quae illo aut voluptatem eaque. Ut nesciunt cupiditate voluptatem et sint quibusdam. Qui veritatis id impedit dolorem voluptatem quia rerum. Sit asperiores quos alias quasi.\",\n            \"post_id\": 33,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 363,\n            \"contents\": \"Quam omnis necessitatibus ut eveniet. Consequuntur reprehenderit reiciendis ex ad non reprehenderit consequatur. Architecto a quos excepturi.\",\n            \"post_id\": 36,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 365,\n            \"contents\": \"Fugit tenetur et consequuntur. Dolor id nulla amet consequuntur est qui ullam minus. Qui fugiat ullam consequatur ut dolores qui maxime. Est consequatur velit nobis quibusdam omnis.\",\n            \"post_id\": 42,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 386,\n            \"contents\": \"Corporis at rerum id illum. Quibusdam voluptatem voluptatem praesentium deleniti quia beatae impedit. Vero accusamus omnis dolorem corrupti non ut tempora. Qui consectetur veniam dolorem.\",\n            \"post_id\": 3,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 388,\n            \"contents\": \"Harum ut amet laudantium molestiae delectus in ullam. Repudiandae voluptatem magnam atque hic voluptates mollitia laborum nam. Eos inventore accusamus esse in. Sit voluptatem eaque accusamus in quam illum. Mollitia ab in ab consectetur odio id.\",\n            \"post_id\": 27,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 396,\n            \"contents\": \"Aperiam consequatur tenetur reprehenderit eos delectus. Odio consectetur adipisci et necessitatibus voluptatum ut. Illo vel dignissimos assumenda.\",\n            \"post_id\": 3,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 399,\n            \"contents\": \"Qui voluptas dolores quaerat fugiat. Dignissimos id aliquam in voluptates omnis. Nihil quis est sint.\",\n            \"post_id\": 6,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 400,\n            \"contents\": \"Eum sequi inventore mollitia molestias. Et adipisci rem officia minima ipsa aut. Voluptatem beatae alias eveniet error iste.\",\n            \"post_id\": 38,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 401,\n            \"contents\": \"Dolores sit excepturi ab adipisci aut omnis iure. Recusandae adipisci impedit soluta alias porro qui. Nesciunt cumque aut ad. Voluptatibus earum enim enim laudantium voluptatem nihil ducimus nihil.\",\n            \"post_id\": 31,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 402,\n            \"contents\": \"Id eveniet esse aut. Ut aut tenetur fugit dolorum architecto. Alias est cupiditate vel odit.\",\n            \"post_id\": 25,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 408,\n            \"contents\": \"Adipisci aperiam nulla in. Laudantium facilis maiores beatae cumque veritatis. Adipisci dicta recusandae sed ut. Illum consequatur eveniet velit unde adipisci amet.\",\n            \"post_id\": 35,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 411,\n            \"contents\": \"Sit voluptas tenetur a fugit dolor. Ut illo consequatur dolor qui sequi sit ratione.\",\n            \"post_id\": 25,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 412,\n            \"contents\": \"Et eos aut impedit vel eius in. Et et porro nam dolor. Quo placeat eos voluptatibus dolor dolores qui excepturi. Illo et tenetur dolorum qui.\",\n            \"post_id\": 14,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 414,\n            \"contents\": \"Rerum cumque et sapiente odit. Illo explicabo velit nulla doloribus et et et. Aut maxime doloremque reprehenderit veniam praesentium. Ut eligendi est est eligendi ut corrupti placeat neque.\",\n            \"post_id\": 15,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 417,\n            \"contents\": \"Magni recusandae sit optio eius fugit. Id ipsam ut rerum et nisi aut dignissimos. Voluptatem impedit aut aut et. Corporis omnis nesciunt facere sint quidem quia. Laboriosam quis aliquid quo facilis omnis quis voluptates.\",\n            \"post_id\": 35,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 418,\n            \"contents\": \"Sunt consequatur est totam officia velit omnis. Deleniti aliquid eos vel. Alias eius quia quisquam non.\",\n            \"post_id\": 11,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 422,\n            \"contents\": \"Enim minus id qui iste incidunt voluptatibus et. Quam beatae dolorem excepturi consequuntur. Quas quibusdam assumenda quia magni sequi consequatur voluptatem architecto.\",\n            \"post_id\": 20,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 438,\n            \"contents\": \"Sit tempora aut sunt quasi quasi tempore et aut. Dicta incidunt doloremque voluptates nihil. Praesentium ad minima quia voluptatem numquam placeat.\",\n            \"post_id\": 23,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 447,\n            \"contents\": \"Veritatis quidem qui in voluptatibus. Modi esse similique molestiae. In autem est repudiandae perspiciatis ut asperiores.\",\n            \"post_id\": 45,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 452,\n            \"contents\": \"Esse quisquam quae pariatur perferendis. Velit ipsa repellat a ut nesciunt officia eos qui. Ut repellendus impedit sapiente.\",\n            \"post_id\": 3,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 453,\n            \"contents\": \"Et ratione quia illo numquam. Accusamus quo aperiam consectetur ratione. Labore perspiciatis fuga maiores ut aut nam. Quam nihil placeat dignissimos iste quo.\",\n            \"post_id\": 28,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 454,\n            \"contents\": \"Et et commodi corrupti. Aspernatur et et consequatur quisquam recusandae autem quibusdam numquam. Ut voluptates numquam fugit ipsa ipsam ut. Accusantium molestias quia voluptate aliquam vel.\",\n            \"post_id\": 18,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 464,\n            \"contents\": \"Enim non rerum temporibus aliquid. Rerum ullam iste blanditiis praesentium in ipsam quia. Adipisci maiores labore delectus magnam.\",\n            \"post_id\": 24,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 472,\n            \"contents\": \"Non cupiditate asperiores exercitationem saepe natus sed fugit reprehenderit. Deleniti enim non illum animi aliquam qui. Quaerat nihil accusamus exercitationem aliquam fugiat. Sit repudiandae officia autem ab necessitatibus debitis veniam.\",\n            \"post_id\": 45,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 485,\n            \"contents\": \"Molestias omnis sint enim corrupti. Aut amet quia molestiae sunt sit omnis accusantium vitae. Quia sint vitae aspernatur et provident. Quia impedit et maxime ipsam impedit laudantium.\",\n            \"post_id\": 26,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 487,\n            \"contents\": \"Minus qui consequatur tempore. Sed expedita est porro quidem. Doloremque ratione odio enim.\",\n            \"post_id\": 10,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 490,\n            \"contents\": \"Asperiores alias illum vel voluptas omnis quis. Eligendi autem dolor numquam ratione numquam vel officia. Dolore quibusdam illum facere aut fuga id.\",\n            \"post_id\": 44,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 492,\n            \"contents\": \"Ut ad et omnis et saepe eum fugit perspiciatis. Omnis doloremque ducimus occaecati. Et enim sed maxime voluptatem eum. Aut omnis et molestiae non dolores omnis.\",\n            \"post_id\": 6,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all Comments of a Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/comment/all/post/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"all",
+								"post",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Get all Comments of a Post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "githubmscomment.com/comment/all/post/1",
+									"host": [
+										"githubmscomment",
+										"com"
+									],
+									"path": [
+										"comment",
+										"all",
+										"post",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 15:21:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2942"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"All Comments of user 1\",\n    \"data\": [\n        {\n            \"id\": 57,\n            \"contents\": \"Aut enim qui ut ullam omnis. In odio voluptas totam cumque et hic ea. Labore sequi aut molestias qui soluta. Quam quis voluptatem perferendis accusamus rem sit dolorum ut.\",\n            \"post_id\": 1,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 67,\n            \"contents\": \"Dolor est dolorum pariatur quisquam aliquam aliquam. Ex blanditiis itaque deleniti aut nesciunt consequatur.\",\n            \"post_id\": 1,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 169,\n            \"contents\": \"Eligendi porro et quibusdam est dolorum totam. Aut molestiae possimus adipisci voluptatem. Quas rerum quae excepturi nam. Aut voluptatibus voluptatem sint quam reprehenderit aut. Ducimus rerum illo sequi iste sed modi.\",\n            \"post_id\": 1,\n            \"user_id\": 3,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 228,\n            \"contents\": \"Neque quas unde quisquam laudantium facilis tempore. Animi nesciunt ullam iste itaque cumque vel non. Aut dolore hic rerum. Distinctio ex esse quia. Molestias quia excepturi qui id ut incidunt.\",\n            \"post_id\": 1,\n            \"user_id\": 5,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 307,\n            \"contents\": \"Veniam aut vitae delectus et ut. Error qui libero eligendi itaque. Ut hic rerum corporis. Non omnis incidunt error consequuntur qui et aut. Nihil consectetur recusandae ducimus excepturi asperiores laboriosam.\",\n            \"post_id\": 1,\n            \"user_id\": 1,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 327,\n            \"contents\": \"Voluptatem alias iure rerum itaque esse asperiores. Ut sint eligendi accusantium qui et ab perferendis. Non esse eligendi architecto totam corrupti doloribus.\",\n            \"post_id\": 1,\n            \"user_id\": 5,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 329,\n            \"contents\": \"Ipsam aut inventore aperiam sed quas. Dolore quia ab nemo iure voluptas. Voluptates tempore aliquam eligendi est vero atque.\",\n            \"post_id\": 1,\n            \"user_id\": 3,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 375,\n            \"contents\": \"Facilis blanditiis ad delectus ut similique tempora ipsam. Quis nesciunt ut possimus. Quis dolorem et quos qui id et.\",\n            \"post_id\": 1,\n            \"user_id\": 5,\n            \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 405,\n            \"contents\": \"Similique incidunt magnam est aliquam. Veniam alias fuga nam culpa ad iure vero officia. Non officiis debitis eius et odio velit. Enim illum quia exercitationem voluptatum.\",\n            \"post_id\": 1,\n            \"user_id\": 4,\n            \"created_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"updated_at\": \"2022-06-12T15:03:45.000000Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a New Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contents",
+									"value": "This is a demo comment",
+									"type": "text"
+								},
+								{
+									"key": "post_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/comment",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Create a New Comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "contents",
+											"value": "This is a demo comment",
+											"type": "text"
+										},
+										{
+											"key": "post_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "githubmscomment.com/comment",
+									"host": [
+										"githubmscomment",
+										"com"
+									],
+									"path": [
+										"comment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 15:24:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 201,\n    \"resPhrase\": \"Created\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Comment created.\",\n    \"data\": {\n        \"contents\": \"This is a demo comment\",\n        \"post_id\": \"1\",\n        \"user_id\": \"1\",\n        \"updated_at\": \"2022-06-12T15:24:32.000000Z\",\n        \"created_at\": \"2022-06-12T15:24:32.000000Z\",\n        \"id\": 501\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a Single Comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/comment/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Get a Single Comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "githubmscomment.com//comment/1",
+									"host": [
+										"githubmscomment",
+										"com"
+									],
+									"path": [
+										"",
+										"comment",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 15:25:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "354"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Comment found.\",\n    \"data\": {\n        \"id\": 1,\n        \"contents\": \"Ea accusamus repellendus ab dolorem eius. Vel sint magni eveniet eos ut. Labore vel aut et excepturi quos expedita.\",\n        \"post_id\": 33,\n        \"user_id\": 4,\n        \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n        \"updated_at\": \"2022-06-12T15:03:44.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update an Existing Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contents",
+									"value": "Updating The Comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/comment/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Update an Existing Comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "contents",
+											"value": "Updating The Comment",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "githubmscomment.com/comment/1",
+									"host": [
+										"githubmscomment",
+										"com"
+									],
+									"path": [
+										"comment",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 15:28:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "261"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Comment updated.\",\n    \"data\": {\n        \"id\": 1,\n        \"contents\": \"Updating The Comment\",\n        \"post_id\": 33,\n        \"user_id\": 4,\n        \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n        \"updated_at\": \"2022-06-12T15:28:04.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "githubmsgateway.com/api/v1/comment/1",
+							"host": [
+								"githubmsgateway",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "[Success Response] Delete a Comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "githubmscomment.com/comment/1",
+									"host": [
+										"githubmscomment",
+										"com"
+									],
+									"path": [
+										"comment",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 12 Jun 2022 15:30:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.51 (Win64) PHP/8.0.13"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resCode\": 200,\n    \"resPhrase\": \"Ok\",\n    \"resStatus\": \"success\",\n    \"resMsg\": \"Comment deleted.\",\n    \"data\": {\n        \"id\": 1,\n        \"contents\": \"Updating The Comment\",\n        \"post_id\": 33,\n        \"user_id\": 4,\n        \"created_at\": \"2022-06-12T15:03:44.000000Z\",\n        \"updated_at\": \"2022-06-12T15:30:13.000000Z\",\n        \"deleted_at\": \"2022-06-12T15:30:13.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNmViOWY1N2VlNzY5NjNkZTRkYzEyYzA1MjhiYjYyZDE3MGFiZDljOTgzYWM4ODAyMzQ5YTMzMjI4Zjc0YmY2Njg2MjIzOGRlNDE0OTY3ZDEiLCJpYXQiOjE2NTUwMTM2NTcuNjQ2OTc5LCJuYmYiOjE2NTUwMTM2NTcuNjQ2OTg2LCJleHAiOjE2ODY1NDk2NTcuNDAzODAyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.fjqk_HbjfpHr1OEvNUkb8wJLK2ElSfnoRNiwiA7kfGr8gCuyypLpDZrw2PSS0akgcbETuWyaMCSWj4ICcBUxFaVeNvXmGxhFSxZkNeRUtr-t2nd-rGARvxVQlai3NG6dhvkStvTiDXoqfQitYP-tykpm3oisZHNQu2Dv-N7ZztRjtn3gYh_pmiujvu_cW1yxB72SDfrEHm4heNILWS0guCh7Rzjzh7aPCfRaakY7NLGpibNECYlbyZ3vihxjoPgH5hbpnqB10HlDHSuQmL6gfJje8oPwLWE8kK7WqVCk35P3zAow-XYCGnoKkpA9v7Umu6-Lz2qmFrVY_8ms_AxtfQT-daVFIm1SQTPuGDP10lJg4e571-WFYnXYZKzYFxmIpLj8UT70W0JuaaoZ5U_Dl4IZuIElZgvrq20K8RYqWP2zG72-A5uxH_DL3O-CQaB_NGz8pJSEQfd6dd8cA0JJ2isaon_3qgca3ObQVDM5FMurDn6raDU3lhyvTD4niF5h8K4EeLQ51v3BuQu91Xj0v-x0Kyl3eidthr3aeb-8uFaWdLeW58Vjp5PRsrjojw2I1D6zDe4oHeBs1XncrMd0gcV5TBslommXykey7jWYtoymeMWRzCxtXigYSkzrHhA92X-spuHSueggQYfEIfNmJh73j5wQUByu6fR0QOBmgTw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
