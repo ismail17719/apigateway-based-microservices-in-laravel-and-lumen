@@ -7,9 +7,9 @@ and accessing a microservice directly is restricted. Gateway is responsible for 
 is an independent stateless application that takes request in, do the necessary work and returns the response without knowing about the existence of a gateway or another 
 microservice paralelly active. 
 
-Gateway is a full fledge laravel application and each microservice has been built using Lumen micro-framework for blazing performance advantage. Here is the 
+Gateway is a full fledge laravel application and each microservice has been built using Lumen micro-framework for blazing performance advantage. Gateway is using Laravel's Passport for Oauth 2 token based authentication. Here is the 
 architecture of the application:
-<img src="https://yourimageshare.com/ib/8aJdc5bSnb.png" alt="License">
+<img src="https://yourimageshare.com/ib/8aJdc5bSnb.png" alt="Application architecture">
 
 ## About Microservices
 
@@ -20,15 +20,63 @@ it as much as I did.
 
 ## Steps to Rebuild
 
-1. Clone the repository by running the following command
+First of all clone the whole repository on your machine by running the following command
 ```sh
-git clone https://github.com/ismail17719/Rhanra.git
+git clone https://github.com/ismail17719/apigateway-based-microservices-in-laravel-and-lumen.git
 ```
-2. Open the terminal and go to the project root directory
-3. Run the composer command to install all dependencies
+### API Gateway
+To setup the gateway follow the steps below.
+1. Open the terminal and go to the Gateway directory
+2. Run the composer command to install all dependencies
 ```sh
 composer install
 ```
+3. Open .env.example and save it as .env file in the same root directory
+4. Open .env file and change the following database details
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=YOURDATABASE
+DB_USERNAME=USERNAME
+DB_PASSWORD=PASSWORD
+```
+
+5. Run the following command to generate a unique key for the application
+```sh
+php artisan key:generate
+```
+6.  Next we need to build the database. In order to do that run the following command in terminal. Let the process complete
+```sh
+php artisan migrate --seed
+```
+7. To setup passport run the following command to create encryption keys and create a password grant client. Copy the later and paste somewhere safe. We gonna need it later on. The rest is done for you.
+
+```sh
+php artisan passport:install
+```
+
+8. Create a virtual host for your gateway if you are working on your local machine or a subdomain if you are working on a live server.
+9. Open Gateway's .env file and add the following lines. We need this for microservice authentication.
+
+```sh
+
+POST_SERVICE_BASE_URL=http://yourserveraddressforpostsservice.com
+POST_SERVICE_SECRET=base64:KDi8mhkvmjYSoA1xQadOSiX00xyRr331vGcQtN+KwzE=
+
+COMMENT_SERVICE_BASE_URL=http://yourserveraddressforcommentsservice.com
+COMMENT_SERVICE_SECRET=base64:PiBDvD+PquYM6uP1oEAKBcLBZsHGxDxnRuMexRIj6Qg=
+```
+Now we need to setup each microservice separately.
+
+### Posts Microservice
+To setup this microservice follow the steps below.
+1. Open the terminal and go to the post microservice directory
+2. Run the composer command to install all dependencies
+```sh
+composer install
+```
+3. Go to your MySQL server and create a separate database for posts microservice.
 4. Open .env.example and save it as .env file in the same root directory
 5. Open .env file and change the following database details
 ```
@@ -40,32 +88,54 @@ DB_USERNAME=USERNAME
 DB_PASSWORD=PASSWORD
 ```
 
-6. Run the following command to generate a unique for the application
-```sh
-php artisan key:generate
-```
-7.  Next we need to build the database. In order to do that run the following command in terminal. Let the process complete
+
+6.  Next we need to build the database. In order to do that run the following command in terminal. Let the process complete
 ```sh
 php artisan migrate --seed
 ```
-8. We also need to build the project resources. To do that you should to have Nodejs installed
+7. Create a virtual host for your post microservice if you are working on your local machine or a subdomain if you are working on a live server. Make sure you add this to the gateway's .env file.
+8. Open post microservice's .env file and add the following lines. We need this for authenticating a request.
 
-For signup:
 ```sh
-curl --location --request POST 'http://yourdomain.com/project-directory/public/api/signup' \
---header 'Accept: application/json' \
---form 'name="YOUR NAME"' \
---form 'email="youremail@domain.com"' \
---form 'password="YOUR PASSWORD"' \
---form 'password_confirmation="YOUR PASSWORD"'
+
+ACCEPTED_SECRETS=base64:KDi8mhkvmjYSoA1xQadOSiX00xyRr331vGcQtN+KwzE=
+
 ```
-For login:
+
+### Comments Microservice
+To setup this microservice follow the steps below.
+1. Open the terminal and go to the comments microservice directory
+2. Run the composer command to install all dependencies
 ```sh
-curl --location --request POST 'http://yourdomain.com/project-directory/public/api/login' \
---header 'Accept: application/json' \
---form 'email="youremail@domain.com"' \
---form 'password="YOUR DOMAIN"'
+composer install
 ```
-9. You should get correct JSON responses for all requests
+3. Go to your MySQL server and create a separate database for comments microservice.
+4. Open .env.example and save it as .env file in the same root directory
+5. Open .env file and change the following database details
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=YOURDATABASE
+DB_USERNAME=USERNAME
+DB_PASSWORD=PASSWORD
+```
+
+
+6.  Next we need to build the database. In order to do that run the following command in the terminal. Let the process complete
+```sh
+php artisan migrate --seed
+```
+7. Create a virtual host for your post microservice if you are working on your local machine or a subdomain if you are working on a live server. Make sure you add this to the gateway's .env file.
+8. Open post microservice's .env file and add the following lines. We need this for authenticating a request.
+
+```sh
+
+ACCEPTED_SECRETS=base64:PiBDvD+PquYM6uP1oEAKBcLBZsHGxDxnRuMexRIj6Qg=
+
+```
+## Requests
+
+All API endpoints are protected with Passport on guarding the gateway. To access an endpoint and get a response you first need to get an access token. Here is the request for an access token:
 
  :boom: :boom: :boom:
